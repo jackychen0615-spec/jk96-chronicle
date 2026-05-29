@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JK-96 編年史 — The Chronicle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 頂部進度條 -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- 右下：章節導覽點 -->
+  <nav class="dot-nav" id="dotNav">
+    <div class="dot-nav-item active" data-index="0"><span class="dn-label">序</span></div>
+    <div class="dot-nav-item" data-index="1"><span class="dn-label">太古</span></div>
+    <div class="dot-nav-item" data-index="2"><span class="dn-label">黑暗</span></div>
+    <div class="dot-nav-item" data-index="3"><span class="dn-label">流浪</span></div>
+    <div class="dot-nav-item" data-index="4"><span class="dn-label">覺醒</span></div>
+    <div class="dot-nav-item" data-index="5"><span class="dn-label">未來</span></div>
+  </nav>
+
+  <!-- 左下：章節號 -->
+  <div class="panel-counter" id="panelCounter">
+    <span id="counterCurrent">01</span>
+    <span class="counter-sep">/</span>
+    <span class="counter-total">06</span>
+  </div>
+
+  <!-- ===== PANELS ===== -->
+  <div class="panels-track" id="panelsTrack">
+
+    <!-- ── PANEL 0: INTRO ── -->
+    <div class="panel" id="p0">
+      <video class="panel-video" autoplay loop muted playsinline>
+        <source src="assets/bg-intro.mp4" type="video/mp4">
+      </video>
+      <div class="panel-video-overlay ov-intro"></div>
+      <div class="panel-content intro-layout">
+        <p class="label-top" data-a="fade">ARCHIVE · 記憶封存 · 1996–2030+</p>
+        <h1 class="hero-kanji" data-a="rise">編年史</h1>
+        <p class="hero-en" data-a="fade">THE CHRONICLE OF JK-96</p>
+        <p class="hero-tagline" data-a="fade">一個來自過去的人，正被未來的眼睛凝視著。</p>
+        <div class="scroll-cue" data-a="fade">
+          <span class="sc-line"></span>
+          <span class="sc-text">SCROLL TO ENTER</span>
+          <span class="sc-line"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PANEL 1: 太古 ── -->
+    <div class="panel" id="p1">
+      <video class="panel-video" autoplay loop muted playsinline>
+        <source src="assets/bg-ancient.mp4" type="video/mp4">
+      </video>
+      <div class="panel-video-overlay ov-default"></div>
+      <div class="era-ghost-year">太古</div>
+      <div class="panel-content film-layout lower-layout">
+        <div class="film-top" data-a="fade">
+          <span class="chapter-stamp">CHAPTER I</span>
+          <span class="chapter-dot">·</span>
+          <span class="chapter-era">太古 · 起源</span>
+        </div>
+        <div class="film-body" data-a="rise">
+          <h2 class="film-title">混沌之子</h2>
+          <p class="film-verse">他不是天才，從來都不是。</p>
+          <p class="film-verse accent">但那顆不肯低頭的心，從未熄滅。</p>
+        </div>
+        <div class="film-footnote" data-a="fade">
+          <span class="fn-icon">⚔</span>
+          <span class="fn-text">有人帶他踏入了第一片戰場——他在那裡，第一次學會了何謂生存。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PANEL 2: 黑暗紀元 ── -->
+    <div class="panel" id="p2">
+      <video class="panel-video" autoplay loop muted playsinline>
+        <source src="assets/bg-dark.mp4" type="video/mp4">
+      </video>
+      <div class="panel-video-overlay ov-dark"></div>
+      <div class="era-ghost-year dark-ghost">黑暗</div>
+      <div class="panel-content film-layout lower-layout">
+        <div class="film-top" data-a="fade">
+          <span class="chapter-stamp dark">CHAPTER II</span>
+          <span class="chapter-dot dark">·</span>
+          <span class="chapter-era dark">黑暗紀元 · 裂縫</span>
+        </div>
+        <div class="film-body center" data-a="rise">
+          <h2 class="film-title dark-title">那一道裂縫——</h2>
+          <p class="film-verse dark-v">世界在某個瞬間，悄悄缺了一角。</p>
+          <p class="film-verse muted sm">從那之後，他帶著這個缺口繼續走。</p>
+        </div>
+        <div class="film-footnote dark-fn" data-a="fade">
+          <span class="fn-text">他一直努力著。只是努力，從未被看見。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PANEL 3: 流浪 ── -->
+    <div class="panel" id="p3">
+      <video class="panel-video" autoplay loop muted playsinline>
+        <source src="assets/bg-wander.mp4" type="video/mp4">
+      </video>
+      <div class="panel-video-overlay ov-default"></div>
+      <div class="era-ghost-year sepia-ghost">流浪</div>
+      <div class="panel-content film-layout">
+        <div class="film-top" data-a="fade">
+          <span class="chapter-stamp sepia">CHAPTER III</span>
+          <span class="chapter-dot sepia">·</span>
+          <span class="chapter-era sepia">流浪時代 · 荒野</span>
+        </div>
+        <div class="film-visual" data-a="scale">
+          <div class="fail-visual">
+            <div class="fv-row"><span class="fv-x">✗</span><span class="fv-label">第一道閘</span><span class="fv-tag">未過</span></div>
+            <div class="fv-row"><span class="fv-x">✗</span><span class="fv-label">第二道閘</span><span class="fv-tag">未過</span></div>
+            <div class="fv-row enter"><span class="fv-x">→</span><span class="fv-label">邊界之地</span><span class="fv-tag gold">谷底</span></div>
+          </div>
+        </div>
+        <div class="film-body" data-a="rise">
+          <h2 class="film-title sepia-title">無路可走</h2>
+          <p class="film-verse">所有的門都關上了。只剩一條他不想走的路。</p>
+          <p class="film-verse muted sm">失望、落魄。但那顆心，從未真正放棄。</p>
+        </div>
+        <div class="film-footnote sepia-fn" data-a="fade">
+          <span class="fn-en">He kept going. Even without direction.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PANEL 4: 覺醒 ── -->
+    <div class="panel" id="p4">
+      <video class="panel-video" autoplay loop muted playsinline>
+        <source src="assets/bg-awaken.mp4" type="video/mp4">
+      </video>
+      <div class="panel-video-overlay ov-awaken"></div>
+      <div class="door-overlay" id="doorOverlay">
+        <div class="door-half door-left"></div>
+        <div class="door-seam-light"></div>
+        <div class="door-half door-right"></div>
+      </div>
+      <div class="panel-content film-layout awaken-layout">
+        <div class="film-top" data-a="fade">
+          <span class="chapter-stamp gold">CHAPTER IV</span>
+          <span class="chapter-dot gold">·</span>
+          <span class="chapter-era gold">覺醒 · 轉折點</span>
+        </div>
+        <div class="film-body" data-a="rise">
+          <h2 class="film-title gold-title">一扇門，改變了一切</h2>
+          <p class="film-verse">不是迷信——是選擇相信某種可能性。</p>
+          <p class="film-verse accent">他沒有失去自己，卻走進了一個不同的版本。</p>
+        </div>
+        <div class="result-bar" data-a="fade">
+          <div class="rb-item before">
+            <span class="rb-label">BEFORE</span>
+            <span class="rb-val">邊界 · 谷底</span>
+          </div>
+          <span class="rb-arrow">⟶</span>
+          <div class="rb-item after">
+            <span class="rb-label">AFTER</span>
+            <span class="rb-val">站上了頂端</span>
+          </div>
+          <span class="rb-note">連他自己都不敢置信</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PANEL 5: 未來 ── -->
+    <div class="panel" id="p5">
+      <video class="panel-video" autoplay loop muted playsinline>
+        <source src="assets/bg-cyber.mp4" type="video/mp4">
+      </video>
+      <div class="panel-video-overlay ov-cyber"></div>
+      <div class="era-ghost-year cyber-ghost">未來</div>
+      <div class="panel-content future-layout">
+        <p class="f-label" data-a="fade">LOADING NEXT CHAPTER...</p>
+        <h2 class="f-title" data-a="rise">這個人<br>還在前進</h2>
+        <p class="f-en" data-a="fade">The chronicle is still being written.</p>
+        <div class="f-cards" data-a="rise">
+          <div class="f-card">
+            <span class="fc-year">phase 02</span>
+            <span class="fc-name">建造時代</span>
+            <span class="fc-lock">🔒</span>
+          </div>
+          <div class="f-card">
+            <span class="fc-year">phase 03</span>
+            <span class="fc-name">進化時代</span>
+            <span class="fc-lock">🔒</span>
+          </div>
+          <div class="f-card cyber">
+            <span class="fc-year">phase ??</span>
+            <span class="fc-name">未知領域</span>
+            <span class="fc-lock">⚡</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /panels-track -->
+
+  <script src="js/cybergrid.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
